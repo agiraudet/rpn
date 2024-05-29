@@ -2,9 +2,9 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY main.py rpn.py /app
+COPY main.py rpn.py /app/
 
-RUN pip install fastapi uvicorn pydantic
+RUN pip install fastapi uvicorn pydantic psycopg2-binary pandas SQLAlchemy
 
 EXPOSE 80
 

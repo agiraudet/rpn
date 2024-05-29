@@ -16,7 +16,7 @@ def rpn_eval(expr):
             y = stack.pop()
             x = stack.pop()
             try:
-                res = ops([tok](x, y))
+                res = ops[tok](x, y)
                 stack.append(res)
             except ZeroDivisionError:
                 raise ValueError("Invalid RPN expression: division by zero")
