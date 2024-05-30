@@ -29,5 +29,13 @@ services:
       timeout: 5s
       retries: 5
 
+  frontend:
+    build:
+      context: rpn_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rpnapi
+
 volumes:
   postgres_data:

@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY main.py rpn.py /app/
 
-RUN pip install fastapi uvicorn pydantic psycopg2-binary pandas SQLAlchemy
+RUN pip install fastapi uvicorn pydantic psycopg2-binary pandas SQLAlchemy fastapi-cors
 
 EXPOSE 80
 

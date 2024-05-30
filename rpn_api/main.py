@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from rpn import rpn_eval
 
@@ -11,7 +12,6 @@ from io import StringIO
 
 DATABASE_URL = "postgresql://postgres:password@db/postgres"
 
-# @retry(wait=wait_fixed(2), stop=stop_after_delay(30))
 def get_engine():
     return create_engine(DATABASE_URL)
 
@@ -35,6 +35,20 @@ class RpnExprResult(BaseModel):
     result: float
 
 app = FastAPI()
+
+# Configure CORS
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
