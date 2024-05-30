@@ -4,7 +4,7 @@ Ce projet consiste en une calculatrice utilisant la notation polonaise inverse (
 
 ## Plan de Développement
 
-Consultez le fichier [Plan_de_développement.md](https://github.com/agiraudet/rpn/blob/main/Plan_de_d%C3%A9veloppement.md) pour obtenir le plan détaillé du développement du projet.
+Consultez le fichier [plan_developpement.md](https://github.com/agiraudet/rpn/blob/main/plan_developpement.md) pour obtenir le plan détaillé du développement du projet.
 
 ## Lancer l'Application
 
